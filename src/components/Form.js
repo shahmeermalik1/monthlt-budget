@@ -10,7 +10,7 @@ function Form() {
                 date,
                 hours
             };
-            const response = await axios.post(`${API_BASE_URL}/api/budget/postshift`, reqbody);
+            const response = await axios.post("https://backend-hewl.onrender.com/api/budget/postshift", reqbody);
             console.log(response.data); 
             setDone("Submitted", response);  // Update the state to show that the data has been submitted
             // This will print the data received from the server
