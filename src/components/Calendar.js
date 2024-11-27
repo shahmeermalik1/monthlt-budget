@@ -30,7 +30,7 @@ const Calendar = () => {
       }
 
       let totalHours = 0;
-      const res = await axios.get(`${API_BASE_URL}/api/budget/getshift`, {
+      const res = await axios.get("https://backend-hewl.onrender.com/api/budget/getshift", {
         params: { job: selectedJob, startDate, endDate },
       });
 
@@ -91,7 +91,7 @@ const Calendar = () => {
         const endDate = dates[dates.length - 1]?.toISOString().split("T")[0];
 
         if (startDate && endDate) {
-          const response = await axios.get(`${API_BASE_URL}/api/budget/getshift`, {
+          const response = await axios.get("https://backend-hewl.onrender.com/api/budget/getshift", {
             params: { startDate, endDate },
           });
           const { shifts, payByJob } = response.data;
